@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logoo.png" />
+    <title>Formulário</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #FFF8F7;
+        }
+
+        .form-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(253, 238, 242, 0.1);
+            text-align: center;
+            max-width: 400px; 
+        }
+
+        .form-card h1 {
+            color: #FFD9DF;
+        }
+
+        .form-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .form-card button[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #FFD9DF;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-card button[type="submit"]:hover {
+            background-color: #FFF8F7;
+        }
+
+        input[type="radio"]:checked + .custom-radio {
+            background-color: pink;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .custom-radio {
+            position: relative;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid pink;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .custom-radio::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            background-color: pink;
+            display: none;
+        }
+
+        input[type="radio"]:checked + .custom-radio::after {
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #FFF8F7;
+            border-radius: 5px;
+            background-color: #FFF8F7;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <img src="logoo.png" alt="Logo">
+        <h1><center> ❀ Formulário ❀ </center></h1>
+        <form onsubmit="return validar_form();">
+            <font color="#FFD9DF" size="4" face="Times New Roman">
+                <label for="fname">Primeiro nome:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Último nome:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+                <label for="dt_nasc">Data de Nascimento:</label><br>
+                <input type="date" id="dt_nasc" name="dt_nasc"><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="telefone">Telefone:</label><br>
+                <input type="tel" id="telefone" name="telefone"><br>
+                <label for="senha">Senha:</label><br>
+                <input type="password" id="senha" name="senha"><br>
+                <input type="radio" id="homem" name="fav_language" value="Homem">
+                <label class="custom-radio" for="homem"></label>
+                <label for="homem">Homem</label>   
+                <input type="radio" id="mulher" name="fav_language" value="Mulher">
+                <label class="custom-radio" for="mulher"></label>
+                <label for="mulher">Mulher</label><br>             
+                <button type="submit">Submit</button>
+            </font>
+        </form>
+    </div>
+    <script>
+        function validar_form() {
+            var senha = document.getElementById("senha");
+            if (senha.value === "") {
+                alert("Senha não informada");
+            }
+            if (senha.value.length < 5) {
+                alert("Senha deve ter pelo menos 5 caracteres");
+            }
+        }
+    </script>
+</body>
+</html>
