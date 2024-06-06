@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="quiz.css">
+    <title>QUIZ</title>
+    <script>
+        function verificarRespostas() {
+            var respostasCorretas = ["paris", "jupiter", "cervantes", "pacifico"];
+            var respostasCorretasCount = 0;
+            var respostasFornecidasCount = 0;
+            var respostasErradas = [];
+
+            var respostaQ1 = document.querySelector('input[name="q1"]:checked');
+            if (respostaQ1) {
+                respostasFornecidasCount++;
+                if (respostaQ1.value === "paris") {
+                    respostasCorretasCount++;
+                } else {
+                    respostasErradas.push("Q1: Qual é a capital da França? Resposta correta: Paris");
+                }
+            }
+
+            var respostaQ2 = document.querySelector('input[name="q2"]:checked');
+            if (respostaQ2) {
+                respostasFornecidasCount++;
+                if (respostaQ2.value === "jupiter") {
+                    respostasCorretasCount++;
+                } else {
+                    respostasErradas.push("Q2: Qual é o maior planeta do sistema solar? Resposta correta: Júpiter");
+                }
+            }
+
+            var respostaQ3 = document.querySelector('input[name="q3"]:checked');
+            if (respostaQ3) {
+                respostasFornecidasCount++;
+                if (respostaQ3.value === "cervantes") {
+                    respostasCorretasCount++;
+                } else {
+                    respostasErradas.push("Q3: Quem escreveu 'Dom Quixote'? Resposta correta: Miguel de Cervantes");
+                }
+            }
+
+            var respostaQ4 = document.querySelector('input[name="q4"]:checked');
+            if (respostaQ4) {
+                respostasFornecidasCount++;
+                if (respostaQ4.value === "pacifico") {
+                    respostasCorretasCount++;
+                } else {
+                    respostasErradas.push("Q4: Qual é o maior oceano do mundo? Resposta correta: Oceano Pacífico");
+                }
+            }
+
+            var respostaQ5 = document.querySelector('input[name="q5"]:checked');
+            if (respostaQ5) {
+                respostasFornecidasCount++;
+                if (respostaQ5.value === "da_vinci") {
+                    respostasCorretasCount++;
+                } else {
+                    respostasErradas.push("Q5: Quem pintou a 'Mona Lisa'? Resposta correta: Leonardo da Vinci");
+                }
+            }
+
+            var resultado = "Você acertou " + respostasCorretasCount + " de " + respostasFornecidasCount + " questões.";
+            if (respostasErradas.length > 0) {
+                resultado += "\nRespostas incorretas:\n" + respostasErradas.join("\n");
+            }
+            alert(resultado);
+        }
+    </script>
+</head>
+<body>
+    <div class="form-card">
+        <h1>QUIZ</h1>
+
+        <form id="quizForm" onsubmit="verificarRespostas(); return false;">
+            <p><b>Qual é a capital da França?</b></p>
+            <input type="radio" id="q1_opcao1" name="q1" value="paris">
+            <label for="q1_opcao1">Paris</label>
+
+            <input type="radio" id="q1_opcao2" name="q1" value="londres">
+            <label for="q1_opcao2">Londres</label>
+
+            <input type="radio" id="q1_opcao3" name="q1" value="roma">
+            <label for="q1_opcao3">Roma</label>
+
+            <p><b>Qual é o maior planeta do sistema solar?</b></p>
+            <input type="radio" id="q2_opcao1" name="q2" value="jupiter">
+            <label for="q2_opcao1">Júpiter</label>
+
+            <input type="radio" id="q2_opcao2" name="q2" value="venus">
+            <label for="q2_opcao2">Vênus</label>
+
+            <input type="radio" id="q2_opcao3" name="q2" value="terra">
+            <label for="q2_opcao3">Terra</label>
+
+            <p><b>Quem escreveu 'Dom Quixote'?</b></p>
+            <input type="radio" id="q3_opcao1" name="q3" value="shakespeare">
+            <label for="q3_opcao1">William Shakespeare</label>
+
+            <input type="radio" id="q3_opcao2" name="q3" value="dickens">
+            <label for="q3_opcao2">Charles Dickens</label>
+
+            <input type="radio" id="q3_opcao3" name="q3" value="cervantes">
+            <label for="q3_opcao3">Miguel de Cervantes</label>
+
+            <p><b>Qual é o maior oceano do mundo?</b></p>
+            <input type="radio" id="q4_opcao1" name="q4" value="atlantico">
+            <label for="q4_opcao1">Oceano Atlântico</label>
+
+            <input type="radio" id="q4_opcao2" name="q4" value="indico">
+            <label for="q4_opcao2">Oceano Índico</label>
+
+            <input type="radio" id="q4_opcao3" name="q4" value="pacifico">
+            <label for="q4_opcao3">Oceano Pacífico</label>
+
+            <p><b>Quem pintou a 'Mona Lisa'?</b></p>
+            <input type="radio" id="q5_opcao1" name="q5" value="picasso">
+            <label for="q5_opcao1">Pablo Picasso</label>
+
+            <input type="radio" id="q5_opcao2" name="q5" value="da_vinci">
+            <label for="q5_opcao2">Leonardo da Vinci</label>
+
+            <input type="radio" id="q5_opcao3" name="q5" value="rembrandt">
+            <label for="q5_opcao3">Rembrandt</label>
+            <br><br>
+            <div class="btn-verificacao">
+                <button type="submit">Verificar Respostas</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

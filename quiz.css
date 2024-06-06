@@ -1,0 +1,111 @@
+* {
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #F3EDE0;
+    overflow-y: auto;
+}
+
+.form-card {
+    background-color: #F3EDE0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #CEA660;
+    text-align: center;
+    width: 40%;
+    box-sizing: border-box;
+    margin: 20px;
+}
+
+.form-card h1 {
+    color: #CEA660;
+    text-align: center;
+}
+
+.form-card form{
+    color: #745D20;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.form-card button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #CEA660;
+    color: #745D20;
+    cursor: pointer;
+}
+
+.form-card button[type="submit"]:hover {
+    background-color: #fff9fc;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #CEA660;
+    box-shadow: 0px 0px 20px #CEA660;
+    color: #F3EDE0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #CEA660;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label::after {
+    content: '\2713';
+    font-size: 20px;
+    color: #F3EDE0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="radio"] + label::after {
+    content: '';
+    display: none;
+}
+
+.btn-verificacao button {
+    font-size: 1.2rem;
+    font-family: Heebo;
+    font-weight: 700;
+    background-color: #745D20;
+    border: 0;
+    color: #F3EDE0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.btn-verificacao button:hover {
+    background-color: #CEA660;
+    box-shadow: 0 0 15px #CEA660;
+    color: #745D20;
+}
+
+
+@media screen and (max-width: 600px) {
+    .form-card {
+        padding: 10px;
+    }
+}
